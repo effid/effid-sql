@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 25 juin 2020 à 11:37
+-- Généré le :  mar. 28 juil. 2020 à 15:54
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -80,6 +80,7 @@ INSERT INTO `porte` (`id_porte`, `numero_porte`, `id_salle`) VALUES
 
 CREATE TABLE `reservation` (
   `id_reservation` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `date` date NOT NULL,
   `heure` time NOT NULL,
   `duree` time NOT NULL,
@@ -202,7 +203,8 @@ ALTER TABLE `reservation`
   ADD PRIMARY KEY (`id_reservation`),
   ADD KEY `id_salle` (`id_salle`),
   ADD KEY `id_prof` (`id_prof`),
-  ADD KEY `id_validation` (`id_validation`);
+  ADD KEY `id_validation` (`id_validation`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Index pour la table `salle`
@@ -303,7 +305,8 @@ ALTER TABLE `porte`
 ALTER TABLE `reservation`
   ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`id_validation`) REFERENCES `validation` (`id_validation`),
   ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`id_salle`) REFERENCES `salle` (`id_salle`),
-  ADD CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`id_prof`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`id_prof`) REFERENCES `users` (`id_user`),
+  ADD CONSTRAINT `reservation_ibfk_4` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
 -- Contraintes pour la table `users`
