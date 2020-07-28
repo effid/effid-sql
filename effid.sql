@@ -84,7 +84,7 @@ CREATE TABLE `reservation` (
   `date` date NOT NULL,
   `heure` time NOT NULL,
   `duree` time NOT NULL,
-  `intitule` int(11) NOT NULL,
+  `intitule` varchar(255) NOT NULL,
   `nb_personnes` int(11) NOT NULL,
   `id_salle` int(11) NOT NULL,
   `id_prof` int(11) DEFAULT NULL,
