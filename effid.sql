@@ -131,6 +131,7 @@ CREATE TABLE `type` (
 INSERT INTO `type` (`id_type`, `nom`) VALUES
 (1, 'Admin'),
 (2, 'Etudiant');
+(3, 'Intervenant');
 
 -- --------------------------------------------------------
 
@@ -144,7 +145,7 @@ CREATE TABLE `users` (
   `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `id_puce` int(11) NOT NULL,
+  `id_puce` varchar(255) NOT NULL,
   `id_type` int(11) NOT NULL,
   `id_classe` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -154,9 +155,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nom`, `prenom`, `email`, `password`, `id_puce`, `id_type`, `id_classe`) VALUES
-(1, 'Lefebvre', 'Cyndie', 'cyndie@gmail.com', 'cyndie', 12, 2, 1),
-(2, 'Bernezet', 'Julien', 'julien@gmail.com', 'julien', 2, 2, 1),
-(3, 'Poppé', 'Christophe', 'christophe@gmail.com', 'christophe', 2, 1, NULL);
+(1, 'Lefebvre', 'Cyndie', 'cyndie@gmail.com', 'cyndie', "A12", 2, 1),
+(2, 'Bernezet', 'Julien', 'julien@gmail.com', 'julien', "2C", 2, 1),
+(3, 'Poppé', 'Christophe', 'christophe@gmail.com', 'christophe', "892T", 1, NULL);
+(4, 'Renuy', 'Gregory', 'gregory@gmail.com', 'gregory', "892T", 3, NULL);
 
 -- --------------------------------------------------------
 
