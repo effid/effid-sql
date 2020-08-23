@@ -130,7 +130,7 @@ CREATE TABLE `type` (
 
 INSERT INTO `type` (`id_type`, `nom`) VALUES
 (1, 'Admin'),
-(2, 'Etudiant');
+(2, 'Etudiant'),
 (3, 'Intervenant');
 
 -- --------------------------------------------------------
