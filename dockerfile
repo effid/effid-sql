@@ -1,16 +1,13 @@
+# Image de base mariadb pour arm32v7
 FROM jsurf/rpi-mariadb
 
-ENV MYSQL_ROOT_PASSWORD=APOKALYPSIS
-ENV MYSQL_USER=effid
-ENV MYSQL_PASSWORD=ABYSS
-ENV MYSQL_DATABASE=eff-id
+# Variables env pour les dossiers
+ENV MYSQL_DATA_DIR=/var/lib/mysql
+ENV MYSQL_RUN_DIR=/run/mysqld
+ENV MYSQL_LOG_DIR=/var/log/mysql
 
-
-ENV MYSQL_DATA_DIR=/var/lib/mysql \
-    MYSQL_RUN_DIR=/run/mysqld \
-    MYSQL_LOG_DIR=/var/log/mysql
-
-
+# Import du fichier SQL de base pour formater la base
 COPY ./effid.sql /docker-entrypoint-initdb.d/
 
+# Ouverture du port
 EXPOSE 3306
