@@ -157,7 +157,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `nom`, `prenom`, `email`, `password`, `id_puce`, `id_type`, `id_classe`) VALUES
 (1, 'Lefebvre', 'Cyndie', 'cyndie@gmail.com', 'cyndie', "A12", 2, 1),
 (2, 'Bernezet', 'Julien', 'julien@gmail.com', 'julien', "2C", 2, 1),
-(3, 'Poppé', 'Christophe', 'christophe@gmail.com', 'christophe', "892T", 1, NULL);
+(3, 'Poppé', 'Christophe', 'christophe@gmail.com', 'christophe', "892T", 1, NULL),
 (4, 'Renuy', 'Gregory', 'gregory@gmail.com', 'gregory', "892T", 3, NULL);
 
 -- --------------------------------------------------------
