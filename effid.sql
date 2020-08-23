@@ -305,10 +305,10 @@ ALTER TABLE `porte`
 -- Contraintes pour la table `reservation`
 --
 ALTER TABLE `reservation`
-  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`id_validation`) REFERENCES `validation` (`id_validation`),
   ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`id_salle`) REFERENCES `salle` (`id_salle`),
   ADD CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`id_prof`) REFERENCES `users` (`id_user`),
-  ADD CONSTRAINT `reservation_ibfk_4` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `reservation_ibfk_4` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
+  ADD CONSTRAINT `reservation_ibfk_5` FOREIGN KEY (`id_validation`) REFERENCES `validation` (`id_validation`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `users`
@@ -322,7 +322,7 @@ ALTER TABLE `users`
 --
 ALTER TABLE `validation`
   ADD CONSTRAINT `validation_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
-  ADD CONSTRAINT `validation_ibfk_2` FOREIGN KEY (`id_reservation`) REFERENCES `reservation` (`id_reservation`);
+  ADD CONSTRAINT `validation_ibfk_2` FOREIGN KEY (`id_reservation`) REFERENCES `reservation` (`id_reservation`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
